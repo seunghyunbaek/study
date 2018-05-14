@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>로또 번호 생성기</title>
+  <script type="text/javascript">
+    function Lotto(numbers, balls) { //Lotto 생성자
+      this.numbers = numbers; //로또번호의 숫자범위
+      this.balls = balls; //번호들이 적혀있는 공중에 몇개 선택할지
+      this.luckyNumbers=[]; //뽑힌 번호 저장하는 배열
+    }
+
+    //실제로 사용할 메소드 구현
+    //메소드의 구현위치는 prototype을 이용
+    //luckyNumbers의 getter
+    Lotto.prototype.getLuckyNumbers = function() {
+      while(true) {
+        //Math.random() : [0,1) 0은 포함, 1은 미포함하는 랜덤한 부동소수점 반환
+        //Math.floor() : 주어진 숫자와 같거나 작은 정수 중에서 가장 큰 수를 반환
+        var ball = Math.floor(Math.random() * this.numbers)+1;
+        if(ball >= this.numbers+1)
+          continue;
+        //배열에 번호가 들어있는지 검사한다.
+        //this.luckNumbers.indexOf(ball) : 배열에 해당원소가 존재하는지 검사하는 함수
+        //-1을 리턴하게되면 존재하지 않으니 배열에 push한다.
+        if(this.luckyNumbers.indexOf(ball) == -1) {
+          this.luckyNumbers.push(ball);
+        }
+
+        //배열의 length가 balls와 같아지면 루프를 빠져나오게 된다
+        if(this.luckyNumbers.length == this.balls)
+          break;
+      }
+
+      return this.luckyNumbers;
+    };
+
+      var myLotto = new Lotto(45, 6); //로또 객체 생성
+      document.writeln(myLotto.getLuckyNumbers() + "<br />" + "<br />"); //로또 번호 출력
+
+      /* 추가로 구현할 사항 (기능)
+         1.로또 몇 줄 입력할지 입력받을 입력 폼만들기
+      */
+  </script>
+</head>
+<body>
+
+</body>
+</html>
