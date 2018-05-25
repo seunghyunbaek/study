@@ -28,7 +28,9 @@ const userAgent = headers['user-agent'];
 
 //클라이언트가 어떻게 헤더를 설정했는지에 관계없이 모든 헤더는 소문자로만 표현된다는 것을 기억해야합니다. 이는 어떤 목적이든 헤더를 파싱하는 작업을 간편하게 해줍니다.
 //일부 헤더를 반복해서 설정한다면 이 값은 헤더에 따라 덮어씌워지거나 콤마로 구분된 문자열로 합쳐집니다. 이게 문제가 될 경우에는 rawHeaders를 사용할 수도 있습니다.
-
+var functionname = function(parmeter1, parameter2) {
+  //function 기능
+};
 // # 요청 바디
 // POST나 PUT요청을 받을 때 애플리케이션에 요청 바디는 중요할 것입니다.
 // 요청 헤더에 접근하는 것보다 바디 데이터를 받는 것은 좀더 어렵습니다.
@@ -63,7 +65,6 @@ request.on('error', (err) => {
 
 // # 지금까지 살펴본 내용
 // 지금까지 서버를 생성하고 요청의 메소드, URL, 헤더, 바디를 가져왔습니다. 이를 모두 사용하면 다음과 같이 될 것입니다.
-
 const http = require('http');
 
 http.createServer((request, response) => {
