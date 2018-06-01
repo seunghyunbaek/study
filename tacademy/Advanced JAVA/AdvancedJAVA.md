@@ -91,3 +91,63 @@ Class(클래스)
 * 상태(멤버변수) 및 동작구현(멤버함수, 메서드)에 대한 초기 값을 제공하여 객체를 만드는데 사용할 수 있는 확장 가능한 템플릿
 * 메모리에 로딩된다
 
+### Class as Blueprints for Objects ( 오브젝트를 위한 청사진으로서의 클래스 )
+제조 분야에서 청사진이란 많은 물리적 디바이스들로부터 만들어진 하나의 디바이스에 대한 자세한 설명을 뜻한다  
+소프트웨어에서, 클래스는 객체에 대한 설명이다  
+클래스는 객체가 포함하고 있는 Data를 나타낸다  
+클래스는 객체가 보여주는 기능을 나타낸다  
+자바에서 클래스는 OOP(Object Oriented Programming)의 세가지 특성을 지원한다  
+1. 캡슐화(encapsulation)
+2. 상속(inheritance)
+3. 다형성(polymorphism)
+
+### Field and Method
+Field (데이터 멤버 또는 멤버 변수) : 데이터는 클래스 또는 객체 내에 캡슐화됩니다 이 경우 정규 필드(인스턴스 변수)객체의 인스턴스에는 인스턴스변수가 있다  
+Method (멤버 함수) : 서브루틴 및 데이터에 액세스 할 수있는 멤버 변수  
+
+### 객체간 관계
+객체간의 관계는 두가지로 분류 해 볼수 있습니다  
+"IS-a" 와 "Has-a" 관계  
+```
+class Shape {
+  ...
+}
+
+class Triangle extends Shape implements Drawable {
+  Point points;
+  ...
+}
+
+Is-a : Triangle은 Shape이다. Triangle은 Drawable이다  "~~은 ~~이다"
+       Triangle t = new Triangle();
+       Shape s = (Shape)t;
+       Drawable d = (Drawable)t;
+
+Has-a : Triangle은 Point를 가지고 있다   "~~은 ~~를 소유하다"
+        Triangle t = new Triangle();
+        Point p = t.points;
+```
+
+
+### Accessing Object Members ( 객체 멤버에 액세스하기 )
+'객체를 가리키는 변수.멤버'  의 형태로 접근할 수 있다
+```
+thing1.setX(47);
+thing1.x = 47; //x가 public 일 때만 속성(attribute)에 직접 접근 가능
+```
+
+### Inheritance ( 상속 )
+상속은 새로운 클래스가 기존의 클래스의 자료와 이용할 수 있게 하는 기능  
+상속을 받은 클래스를 (하위or 자식or 부or 파생)클래스 라고 하며 상속한 클래스를 (기반or 상위or 부모)클래스라고 한다
+
+### Polymorphism ( 다형성 )
+다형성은 많은 다른 형태를 가질 수 있는 성질을 말한다
+
+### Overriding Method ( 재정의 )
+상위 클래스로부터 상속 받은 메소드를 하위 클래스에서 수정할 수 있다  
+하위 클래스는 기능적으로 새롭게 메소드를 만들 수 있다 하지만 아래 3가지는 같아야한다
+1. Name
+2. Return Type
+3. Argument List
+
+
