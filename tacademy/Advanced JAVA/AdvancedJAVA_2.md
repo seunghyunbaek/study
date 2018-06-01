@@ -172,4 +172,4 @@ Default Constructor는 constructor를 기술하지 않아도 new Xxx()해서 객
 * Default Constructor는 구현부가 없다  
 
 
-[Tacademy Advanced JAVA]를 참고하여 공부한 내용을 정리하였습니다(https://tacademy.sktechx.com/live/player/onlineLectureDetail.action?seq=52)
+[Tacademy Advanced JAVA를 참고하여 공부한 내용을 정리하였습니다](https://tacademy.sktechx.com/live/player/onlineLectureDetail.action?seq=52)
