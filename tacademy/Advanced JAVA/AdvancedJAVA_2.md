@@ -166,7 +166,8 @@ strictfp : JVM에 관계없이 동일한 방식으로 부동소수점 연산을 
 ### The Default Constructor ( 기본 생성자 )
 하나의 클래스에는 반드시 적어도 하나 이상의 Constructor가 존재한다  
 별도의 Constructor가 정의되면 Default Constructor는 사용할 수 없다  
+Default Constructor는 constructor를 기술하지 않아도 new Xxx()해서 객체를 생성할 수 있게 한다  
 프로그래머가 Constructor를 기술하지 않으면 Default Constructor가 자동적으로 생긴다  
 * Default Constructor는 인수가 없다
 * Default Constructor는 구현부가 없다  
-Default Constructor는 constructor를 기술하지 않아도 new Xxx()해서 객체를 생성할 수 있게 한다
+
