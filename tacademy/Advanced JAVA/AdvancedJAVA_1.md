@@ -151,3 +151,4 @@ thing1.x = 47; //x가 public 일 때만 속성(attribute)에 직접 접근 가�
 3. Argument List
 
 
+[Tacademy Advanced JAVA](https://tacademy.sktechx.com/live/player/onlineLectureDetail.action?seq=52)를 참고하여 공부한 내용을 정리하였습니다
