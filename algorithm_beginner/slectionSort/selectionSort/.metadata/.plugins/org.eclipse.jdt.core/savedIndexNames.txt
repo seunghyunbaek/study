@@ -1,0 +1,1 @@
+INDEX VERSION 1.130+E:\github\study\algorithm_beginner\slectionSort\selectionSort\.metadata\.plugins\org.eclipse.jdt.core
