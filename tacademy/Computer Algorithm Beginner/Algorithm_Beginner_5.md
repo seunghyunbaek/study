@@ -7,4 +7,8 @@
 두 개의 정렬된 배열이 주어졌을 때, 정렬된 하나의 배열로 합병  
 
 **합병정렬의 포인트는 두 개의 정렬된 배열의 앞 번호의 인덱스끼리 비교하여 가장 작은 원소들을 찾아낼 수 있다**
-![Merge_Sort](https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif)
+![Merge_Sort](https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif)  
+input : 65318724 일 때, 합병정렬을 이용하여 정렬하면 위와 같은 과정이 진행됩니다  
+배열을 n/2씩 쪼개어 배열의 원소가 하나씩 되도록 쪼개는 이유는 정렬된 배열이 필요하기 때문입니다  
+배열안의 원소가 하나라면 필요로 하는 정렬된 배열을 얻을 수 있기 때문입니다  
+정렬된 배열을 얻었다면 이제 배열을 비교하면서 합치는 과정을 수행하면 됩니다
