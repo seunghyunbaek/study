@@ -1,4 +1,5 @@
-# Advanced JAVA - Java의 이해
+Advanced JAVA - Java 기본구조
+---
 ### 용어정리
 Class(클래스) : 실행 시 오브젝트에 관한 소스 코드 즉, 청사진이라 할 수 있다  
 Object(객체) : 클래스의 실체. instance  
