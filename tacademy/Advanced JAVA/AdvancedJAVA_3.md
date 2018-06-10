@@ -35,4 +35,5 @@ Java 클래스의 기본
 <modifier> class <name> [extends <superclass>] {
   <declarations>
 }
+
 ```
