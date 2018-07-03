@@ -51,4 +51,12 @@
 1. 톰켓 버전별 차이점에 대해서 알아보세요.
    * http://adminid.kr/apache/50534 이곳에서 버전별 차이점을 확인해 볼 수 있다
 
+#### CSS Selector
+1. pseudo-class인 nth-child 와 nth-of-type의 차이점은 무엇일까요? 두 개의 차이점을 꼭 기억하시기 바랍니다
+   * 가장 큰 차이점은 바로 해당하는 태그의 순서를 말하는지 아니면 부모 속성에서 특정 태그를 가진 자식 속성에서 몇번째 해당하는지의 차이
+   * nth-child : 모든 자식의 순서에서 찾음
+   * nth-of-type: 해당하는 자식 태그 요소에서의 순서를 찾음
+
+
+
 [출처]http://www.edwith.org/boostcourse-web
