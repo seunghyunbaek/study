@@ -57,6 +57,40 @@
    * nth-child : 모든 자식의 순서에서 찾음
    * nth-of-type: 해당하는 자식 태그 요소에서의 순서를 찾음
 
+#### Element가 배치되는 방법(CSS layout)
+* 엘리먼트를 화면에 배치하는 것을 layout작업이라고도 하고, Rendering 과정이라고도 합니다
+* 기본 엘리먼트는 위에서 아래로 배치되는 것이 기본입니다.
+* *display*
+   * display:block 속성은 벽돌을 쌓는 것 처럼 위에서 아래로 쌓입니다. 높이 값을 주면 더 높은 크기로 엘리먼트가 쌓이게 돼있습니다.
+   * display:inline 속성은 왼쪽에서 오른쪽으로 배치됩니다.
+* display 속성만으로는 다양한 배치를 하기는 어렵기 때문에 position 속성을 활용할 수 있습니다
+* *position*
+   * position:static - position의 기본속성, 순서대로 배치됩니다 
+   * position:relative - 원래 자신이 위치해야할 곳을 기준으로 이동합니다
+   * position:absolute - 기준 점에 따라서 특별한 위치에 위치합니다 ( 기준을 잡을 때 static은 기준으로 잡지 않습니다 )
+   * position:fixed - viewport(전체화면)좌측, 맨위를 기준으로 동작합니다
+* *margin* 
+   * margin은 위/아래/좌/우 엘리먼트와 본인간의 간격
+* *float*
+   * float 속성은 2차원 평면에 엘리먼트들이 배치되는데 이것은 float은 그 위에 풍선처럼 떠오르는 느낌으로 생각하면 됩니다
+   * 원래의 flow에서 벗어날 수 있고 둥둥 떠다닐 수 있습니다
+   * float는 left,right를 줄 수 있다
+* *box-sizing*
+   * padding을 늘리면 엘리먼트의 크기가 달라질 수 있는데 box-sizing 속성으로 이를 컨트롤 할 수 있습니다
+
+#### 그래서, layout 구현 방법은?
+* 전체 레이아웃은 float를 잘 사용해서 2단, 3단 컬럼 배치를 구현합니다.  
+최근에는 css-grid나 flex속성등 layout을 위한 속성을 사용하기 시작했으며 브라우저 지원범위를 확인해서 사용하도록 합니다.
+* 특별한 위치에 배치하기 위해서는 position absolute를 사용하고, 기준점을 relative로 설정합니다.
+* 네비게이션과 같은 엘리먼트는 block 엘리먼트를 inline-block으로 변경해서 가로로 배치하기도 합니다.
+* 엘리먼트안의 텍스트의 간격과, 다른 엘리먼트간의 간격은 padding과 margin속성을 잘 활용해서 위치시킵니다
+
+#### float 기반 샘플 화면 레이아웃 구성
+* https://codepen.io/seunghyunbaek/pen/rrBLVd
+* flex 속성 간단히 살펴보기 (http://flexboxfroggy.com/#ko)
+
+#### 디버깅-HTML-CSS
+* 페이지와 스타일 검사 및 편집 (https://developers.google.com/web/tools/chrome-devtools/inspect-styles/?hl=ko)
 
 
 [출처]http://www.edwith.org/boostcourse-web
