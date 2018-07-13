@@ -92,6 +92,12 @@
 #### 디버깅-HTML-CSS
 * 페이지와 스타일 검사 및 편집 (https://developers.google.com/web/tools/chrome-devtools/inspect-styles/?hl=ko)
 
+#### Servlet이란?
+* 자바 웹 어플리케이션의 구성요소 중 동적인 처리를 하는 프로그램의 역할이다.
+* Servlet을 정의해보면
+   * servlet은 WAS(Wev Application Server)에서 동작하는 클래스이다.
+   * servlet은 HttpServlet 클래스를 상속받아야 한다.
+   * servlet과 JSP로부터 최상의 결과를 얻으려면, 웹 페이지를 개발할 때 이 두가지를 조화롭게 사용해야 한다.
 
 
 
