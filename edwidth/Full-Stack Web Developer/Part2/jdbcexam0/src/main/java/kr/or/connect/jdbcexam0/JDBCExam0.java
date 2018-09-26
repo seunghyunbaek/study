@@ -1,5 +1,4 @@
 package kr.or.connect.jdbcexam0;
-
 import kr.or.connect.jdbcexam0.dao.RoleDao;
 import kr.or.connect.jdbcexam0.dto.Role;
 
@@ -10,5 +9,4 @@ public class JDBCExam0 {
 		Role role = dao.getRole(100);
 		System.out.println(role);
 	}
-
 }

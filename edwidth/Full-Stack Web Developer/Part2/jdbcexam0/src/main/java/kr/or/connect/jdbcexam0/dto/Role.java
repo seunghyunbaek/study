@@ -29,7 +29,7 @@ public class Role {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
+	//오버라이딩
 	@Override
 	public String toString() {
 		return "Role [roleId=" + roleId + ", description=" + description + "]";
