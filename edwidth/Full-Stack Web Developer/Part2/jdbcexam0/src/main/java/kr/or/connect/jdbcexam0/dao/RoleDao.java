@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import kr.or.connect.jdbcexam0.dto.Role;
 
@@ -104,7 +106,7 @@ public class RoleDao {
 	}
 
 	public int updateRole(Role role) {
-		int insertCount = 0;
+		int updateCount = 0;
 		
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -113,12 +115,12 @@ public class RoleDao {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
 			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
-			String sql = "UPDATE role SET role_id=?, description=? where role_id = 500";
+			String sql = "UPDATE role SET description=? where role_id = ?";
 			ps = conn.prepareStatement(sql);
-			ps.setInt(1, role.getRoleId());
-			ps.setString(2, role.getDescription());
+			ps.setString(1, role.getDescription());
+			ps.setInt(2, role.getRoleId());
 			
-			insertCount = ps.executeUpdate();
+			updateCount = ps.executeUpdate();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -140,11 +142,11 @@ public class RoleDao {
 			}
 		}
 		
-		return insertCount;
+		return updateCount;
 	}
 	
-	public int deleteRole(Role role) {
-		int insertCount = 0;
+	public int deleteRole(int roleId) {
+		int deleteCount = 0;
 		
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -156,8 +158,8 @@ public class RoleDao {
 			String sql = "DELETE FROM role WHERE role_id=?";
 			ps = conn.prepareStatement(sql);
 			
-			ps.setInt(1, role.getRoleId());
-			insertCount = ps.executeUpdate();
+			ps.setInt(1, roleId);
+			deleteCount = ps.executeUpdate();
 			
 		} catch( Exception e ) {
 			e.printStackTrace();
@@ -182,6 +184,43 @@ public class RoleDao {
 		
 		
 		
-		return insertCount;
+		return deleteCount;
 	}
+
+	public List<Role> getRoles() {
+		List<Role> list = new ArrayList<>();
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		String sql = "SELECT description, role_id FROM role order by role_id desc";
+		
+		// try-with resource 라는 문장을 이용합니다
+		// try (사용할 리소스를 얻어오는 코드 작성 )   이렇게 작성시 알아서 close 하는 일을 수행합니다
+		try(Connection conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
+				PreparedStatement ps = conn.prepareStatement(sql)) {
+				//바인딩 해야하는 부분이 있으면 이곳에 작성
+				// 이 코드에서는 바인딩 할 부분이 없다
+			
+			try (ResultSet rs = ps.executeQuery()) {
+				
+				while (rs.next()) {
+					String description = rs.getString(1);
+					int id = rs.getInt("role_id");
+					Role role = new Role(id, description);
+					list.add(role);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
 }

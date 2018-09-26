@@ -1,18 +1,17 @@
+package kr.or.connect.jdbcexam0;
 import kr.or.connect.jdbcexam0.dao.RoleDao;
 import kr.or.connect.jdbcexam0.dto.Role;
 
 public class JDBCExam3 {
 
 	public static void main(String[] args) {
-		int insertCount = 0;
+		int roleId = 500;
 		
-		Role role = null;
 		RoleDao dao = new RoleDao();
-		role = dao.getRole(300);
 		
-		insertCount = dao.deleteRole(role);
+		int deletetCount = dao.deleteRole(roleId);
 		
-		System.out.println("delete:" + insertCount);
+		System.out.println("delete:" + deletetCount);
 		
 	}
 

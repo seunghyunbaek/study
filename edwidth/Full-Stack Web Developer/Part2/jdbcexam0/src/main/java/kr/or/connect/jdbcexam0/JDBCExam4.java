@@ -1,20 +1,20 @@
 package kr.or.connect.jdbcexam0;
 
+import java.util.List;
+
 import kr.or.connect.jdbcexam0.dao.RoleDao;
 import kr.or.connect.jdbcexam0.dto.Role;
 
-public class JDBCExam2 {
+public class JDBCExam4 {
 
 	public static void main(String[] args) {
-		int roleId = 500;
-		String description = "CEO";
-		
-		Role role = new Role(roleId, description);
-		
 		RoleDao dao = new RoleDao();
 		
-		int updateCount = dao.updateRole(role);
+		List<Role> list= dao.getRoles();
 		
-		System.out.print(updateCount);
+		for(Role role : list) {
+			System.out.println(role);
+		}
 	}
+
 }
