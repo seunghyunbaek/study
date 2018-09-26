@@ -142,4 +142,46 @@ public class RoleDao {
 		
 		return insertCount;
 	}
+	
+	public int deleteRole(Role role) {
+		int insertCount = 0;
+		
+		Connection conn = null;
+		PreparedStatement ps = null;
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
+			String sql = "DELETE FROM role WHERE role_id=?";
+			ps = conn.prepareStatement(sql);
+			
+			ps.setInt(1, role.getRoleId());
+			insertCount = ps.executeUpdate();
+			
+		} catch( Exception e ) {
+			e.printStackTrace();
+		} finally {
+			if(ps != null) {
+				try {
+					ps.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if(conn != null) {
+				try {
+					conn.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			
+		}
+		
+		
+		
+		return insertCount;
+	}
 }
