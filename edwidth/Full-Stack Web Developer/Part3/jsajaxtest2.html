@@ -1,0 +1,36 @@
+<html>
+        <header>
+            <style>
+                .outside {
+                    position: relative;
+                    background-color: blueviolet;
+                    width: 100px;
+                    height: 200px;
+                    font-size: 0.8em;
+                    color: #fff;
+                    left:100px;
+                    top:100px;
+                    transform: scale(1);
+                    transition: left 1s ease-in-out;
+                }
+                a {
+                    position: relative;
+                    left:0px;
+                    top:0px;
+                    transition: all 1s;
+                }
+                a:hover {
+                    border: solid 1px black;
+                    left:1080px;
+                    top:900;
+                }
+            </style>
+        </header>
+    <body>
+        <a>hello</a>
+        <br>
+        <button>right!</button>
+        <div class="outside" style="left:100px">제가 좋아하는 과일은요..</div>
+    </body>
+    <script src="jsajaxtest2.js"></script>
+</html>
