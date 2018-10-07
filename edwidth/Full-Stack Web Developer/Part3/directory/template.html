@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <style>
+            .content > li {
+                border:solid 1px gray;
+                list-style: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>template test example</h2>
+        <ul class="content"></ul>
+    </body>
+    <script id="tempalte-list-item" type="text/template">
+        <li>
+            <h4>{title}</h4><p>{content}</p><div>{price}</div>
+        </li>
+    </script>
+    <script>
+        var data = [
+            { title: "hello", content: "lorem dkfief", price: 2000 }, 
+            { title: "hello2", content: "lorem dkfief2", price: 20002 }
+        ];
+
+        var html = document.querySelector("#tempalte-list-item").innerHTML;
+        var resultHTML = "";
+        for(var i = 0, len = data.length; i < len; i++) {
+            resultHTML += html.replace("{title}", data[i].title)
+            .replace("{content}", data[i].content)
+            .replace("{price}", data[i].price); 
+        }
+
+        document.querySelector(".content").innerHTML = resultHTML;
+    </script>
+</html>
