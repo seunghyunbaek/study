@@ -1,0 +1,12 @@
+ul > li {
+    display: inline-block;
+    border: solid 1px black;
+    background-color: aquamarine;
+}
+
+ul > li > img {
+    width: 180px;
+    height: 200px;
+    margin: 20px;
+    border: solid 1px gray;
+}
