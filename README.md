@@ -12,5 +12,5 @@
 2019.07.15
 * [WEB서버, WAS, 웹 프레임워크는 무엇인가?](https://github.com/seunghyunbaek/study)
 
-2019.08
+2019.08.12
 * [Kotlin:Android Permission 얻기](https://baekjakka.tistory.com/95)
