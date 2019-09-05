@@ -13,3 +13,4 @@
 
 2019.08.12
 * [Kotlin:Android Permission 얻기](https://baekjakka.tistory.com/95)
+ 
