@@ -22,7 +22,7 @@
     <dependency>
     	<groupId>mysql</groupId>
     	<artifactId>mysql-connector-java</artifactId>
-    	<version>8.0.11</version>
+    	<version>8.0.16</version>
     </dependency>
     <!-- JSON 데이터를 사용하기위해 JSON 라이브러리 추가 -->
     <!-- 
